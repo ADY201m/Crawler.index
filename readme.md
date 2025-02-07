@@ -3,6 +3,8 @@
 This project collects, scrapes, and processes economic data from various sources (e.g., Tổng cục Thống kê, Ngân hàng Nhà nước, Bộ Tài chính, Petrolimex, EIA, FAO, etc.) to predict inflation trends in Vietnam. The project is built using Node.js with the Crawlee framework and PostgreSQL as the data store (using Aiven VM for the DB).
 
 ## Project Structure
+
+```plaintext
 inflation-prediction-project/
 ├── configs/
 │   ├── crawler_config.js         # Global settings for crawlers
@@ -13,7 +15,7 @@ inflation-prediction-project/
 │   └── prometheus.yml            # Monitoring configuration
 │
 ├── crawlers/
-│   ├── gso/                      # Tổng cục Thống kê (GSO) crawlers (https://www.gso.gov.vn/en/statistical-data/)
+│   ├── gso/                      # Tổng cục Thống kê (GSO) crawlers
 │   │   ├── cpi_crawler.js        # Chỉ số giá tiêu dùng (CPI)
 │   │   ├── core_inflation.js     # Lạm phát cơ bản
 │   │   ├── food_price_inflation.js  # Lạm phát giá lương thực
@@ -24,28 +26,28 @@ inflation-prediction-project/
 │   │   └── unemployment_rate.js  # Tỷ lệ thất nghiệp
 │   │
 │   ├── evn/                      # Tập đoàn Điện lực (EVN)
-│   │   └── electricity_price.js  # Giá  (?)
+│   │   └── electricity_price.js  # Giá điện
 │   │
 │   ├── eia/                      # U.S. Energy Information Administration (EIA)
-│   │   └── brent_crude.js        # Giá dầu Brent (?)
+│   │   └── brent_crude.js        # Giá dầu Brent
 │   │
 │   ├── investing/                # Investing.com
-│   |   ├── exchange_rate.js      # Tỷ giá USD/VND (https://www.investing.com/currencies/usd-vnd-historical-data)
-│   │   └── gold_price.js         # Giá vàng (?)
+│   │   ├── exchange_rate.js      # Tỷ giá USD/VND
+│   │   └── gold_price.js         # Giá vàng
 │   │
-│   ├── china/                   # National Bureau of Statistics of China
-│   │   └── china_cpi.js          # Lạm phát Trung Quốc (?)
+│   ├── china/                    # National Bureau of Statistics of China
+│   │   └── china_cpi.js          # Lạm phát Trung Quốc
 │   │
 │   ├── imf/                      # IMF
-│   │   └── external_shocks.js    # Cú sốc ngoại sinh (?)
+│   │   └── external_shocks.js    # Cú sốc ngoại sinh
 │   │
 │   └── trading_economics/        # Trading Economics
-│       ├── coffee_price.js       # Giá cà phê (https://tradingeconomics.com/commodity/coffee)
-|       ├── gasoline_price.js     # Giá xăng (https://tradingeconomics.com/vietnam/gasoline-prices)
-│       ├── money_supply.js       # Cung tiền M2 (https://tradingeconomics.com/vietnam/money-supply-m2)
-|       ├── fiscal_deficit.js     # Thâm hụt ngân sách (https://tradingeconomics.com/vietnam/fiscal-expenditure)
-|       ├── rice_price.js         # Giá gạo (https://tradingeconomics.com/commodity/rice)
-│       └── policy_interest_rate.js  # Lãi suất cơ bản (https://tradingeconomics.com/vietnam/interest-rate)
+│       ├── coffee_price.js       # Giá cà phê
+│       ├── gasoline_price.js     # Giá xăng
+│       ├── money_supply.js       # Cung tiền M2
+│       ├── fiscal_deficit.js     # Thâm hụt ngân sách
+│       ├── rice_price.js         # Giá gạo
+│       └── policy_interest_rate.js  # Lãi suất cơ bản
 │
 ├── parsers/
 │   ├── common_parser.js          # Shared parsing utilities and functions
@@ -94,3 +96,38 @@ inflation-prediction-project/
 │
 ├── README.md                     # Project overview and documentation
 └── package.json                  # Project dependencies and scripts
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>= 16.x)
+- PostgreSQL
+- Docker (optional, for deployment)
+
+### Installation
+
+```sh
+git clone https://github.com/your-repo/inflation-prediction-project.git
+cd inflation-prediction-project
+npm install
+```
+
+### Running the Crawlers
+
+```sh
+npm run start-crawlers
+```
+
+### Running the Scheduler
+
+```sh
+npm run start-scheduler
+```
+
+### Running Tests
+
+```sh
+npm test
+```

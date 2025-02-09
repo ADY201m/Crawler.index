@@ -29,14 +29,14 @@ inflation-prediction-project/
 │   │   └── electricity_price.js  # Giá (?)
 │   │
 │   ├── eia/                      # U.S. Energy Information Administration (EIA)
-│   │   └── brent_crude.js        # Giá dầu Brent (?)
+│   │   └── brent_crude.js        # Giá dầu Brent (?) - https://vn.investing.com/commodities/brent-oil-historical-data
 │   │
 │   ├── investing/                # Investing.com
 │   |   ├── exchange_rate.js      # Tỷ giá USD/VND (https://www.investing.com/currencies/usd-vnd-historical-data)
-│   │   └── gold_price.js         # Giá vàng (?)
+│   │   └── gold_price.js         # Giá vàng (?) - https://vn.investing.com/commodities/gold-historical-data
 │   │
 │   ├── china/                   # National Bureau of Statistics of China
-│   │   └── china_cpi.js          # Lạm phát Trung Quốc (?)
+│   │   └── china_cpi.js          # Lạm phát Trung Quốc (?) - https://www.investing.com/economic-calendar/chinese-cpi-459
 │   │
 │   ├── imf/                      # IMF
 │   │   └── external_shocks.js    # Cú sốc ngoại sinh (?)

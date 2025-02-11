@@ -16,12 +16,12 @@ inflation-prediction-project/
 │
 ├── crawlers/
 │   ├── gso/                      # Tổng cục Thống kê (GSO) crawlers (https://www.gso.gov.vn/en/statistical-data/)
-│   │   ├── cpi_crawler.js        # Chỉ số giá tiêu dùng (CPI)                                                              Done
-│   │   ├── core_inflation.js     # Lạm phát cơ bản                                                                         Done
-│   │   ├── food_price_inflation.js  # Lạm phát giá lương thực                                                              Done
-│   │   ├── industrial_production.js  # Chỉ số sản xuất công nghiệp                                                         Done
-│   │   ├── exports_crawler.js    # Xuất khẩu                                                                               Done
-│   │   ├── imports_crawler.js    # Nhập khẩu                                                                               
+│   │   ├── cpi_crawler.js        # Chỉ số giá tiêu dùng (CPI)
+│   │   ├── core_inflation.js     # Lạm phát cơ bản
+│   │   ├── food_price_inflation.js  # Lạm phát giá lương thực
+│   │   ├── industrial_production.js  # Chỉ số sản xuất công nghiệp
+│   │   ├── exports_crawler.js    # Xuất khẩu
+│   │   ├── imports_crawler.js    # Nhập khẩu
 │   │   ├── trade_balance.js      # Cán cân thương mại
 │   │   └── unemployment_rate.js  # Tỷ lệ thất nghiệp
 │   │
@@ -29,11 +29,11 @@ inflation-prediction-project/
 │   │   └── electricity_price.js  # Giá (?)
 │   │
 │   ├── eia/                      # U.S. Energy Information Administration (EIA)
-│   │   └── brent_crude.js        # Giá dầu Brent (?) - https://vn.investing.com/commodities/brent-oil-historical-data      Done
+│   │   └── brent_crude.js        # Giá dầu Brent (?) - https://vn.investing.com/commodities/brent-oil-historical-data
 │   │
 │   ├── investing/                # Investing.com
-│   |   ├── exchange_rate.js      # Tỷ giá USD/VND (https://www.investing.com/currencies/usd-vnd-historical-data)           Done
-│   │   └── gold_price.js         # Giá vàng (?) - https://vn.investing.com/commodities/gold-historical-data                Done
+│   |   ├── exchange_rate.js      # Tỷ giá USD/VND (https://www.investing.com/currencies/usd-vnd-historical-data)
+│   │   └── gold_price.js         # Giá vàng (?) - https://vn.investing.com/commodities/gold-historical-data
 │   │
 │   ├── china/                   # National Bureau of Statistics of China
 │   │   └── china_cpi.js          # Lạm phát Trung Quốc (?) - https://www.investing.com/economic-calendar/chinese-cpi-459

@@ -24,9 +24,6 @@ inflation-prediction-project/
 │   │   └── brent_crude.js        # Giá dầu Brent (https://vn.investing.com/commodities/brent-oil-historical-data)
 │   │   └── china_cpi.js          # Lạm phát Trung Quốc (https://www.investing.com/economic-calendar/chinese-cpi-459)
 │   │
-│   ├── imf/                      # IMF
-│   │   └── external_shocks.js    # Cú sốc ngoại sinh (?)
-│   │
 │   └── trading_economics/        # Trading Economics
 │       ├── coffee_price.js       # Giá cà phê (https://tradingeconomics.com/commodity/coffee)
 │       ├── gasoline_price.js     # Giá xăng (https://tradingeconomics.com/vietnam/gasoline-prices)

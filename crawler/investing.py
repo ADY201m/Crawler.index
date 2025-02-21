@@ -1,16 +1,28 @@
 from playwright.sync_api import sync_playwright
 import pandas as pd
 from datetime import datetime
+import os
 
-def get_china_cpi():
+def get_china_cpi(output_dir='data/raw/'):
     """
     Retrieves China's Consumer Price Index (CPI) historical data from Investing.com
+    and saves it to a CSV file in the specified directory.
     
+    Args:
+        output_dir (str): Directory path where the CSV file will be saved
+        
     Returns a dictionary with a 'china_cpi' key containing a DataFrame of historical data
     or an error message if unsuccessful.
     """
     url = 'https://www.investing.com/economic-calendar/chinese-cpi-459'
     result = {'china_cpi': None}
+    
+    # Create directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Create timestamped filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = os.path.join(output_dir, f"china_cpi.csv")
 
     try:
         with sync_playwright() as p:
@@ -114,6 +126,10 @@ def get_china_cpi():
                 for col in ['Actual', 'Forecast', 'Previous']:
                     df[col] = pd.to_numeric(df[col].str.replace('%', '', regex=False), errors='coerce') / 100
                 
+                # Save to CSV file
+                df.to_csv(output_file, index=False)
+                print(f"Data successfully saved to {output_file}")
+                
                 result['china_cpi'] = df
             else:
                 result['china_cpi'] = 'No data found'
@@ -121,14 +137,16 @@ def get_china_cpi():
     except Exception as e:
         result['china_cpi'] = f'Error during scraping: {str(e)}'
 
-    return result
+    return result, output_file
 
 # Example usage
 if __name__ == "__main__":
-    data = get_china_cpi()
+    data, saved_file_path = get_china_cpi()
+    
     if isinstance(data['china_cpi'], pd.DataFrame):
         print(f"Retrieved {len(data['china_cpi'])} records")
+        print(f"Data saved to {saved_file_path}")
         print("Latest 5 entries:")
-        print(data['china_cpi'].head(20))
+        print(data['china_cpi'].head(5))
     else:
         print("Error:", data['china_cpi'])

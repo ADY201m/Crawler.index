@@ -49,7 +49,7 @@ def get_china_cpi(output_dir='data/raw/'):
             page.wait_for_selector('#eventHistoryTable459', timeout=30000)
 
             # Improved "Show More" handling
-            max_clicks = 30  # Adjust based on expected clicks
+            max_clicks = 70  # Adjust based on expected clicks
             click_count = 0
             previous_row_count = 0
 
